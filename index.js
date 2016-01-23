@@ -20,7 +20,7 @@ var measureChar = (function () {
 
 var calculateSizeTable = function (font, charSet) {
   var table = {};
-  charSet.forEach(function (c) { table[c] = measureLetter(font, c); });
+  charSet.forEach(function (c) { table[c] = measureChar(font, c); });
   return table;
 };
 
