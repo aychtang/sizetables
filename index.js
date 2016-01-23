@@ -9,10 +9,10 @@ var defaultCharSet = function () {
 // Generation - depends on DOM + canvas measurement to produce a sizetable.
 
 var measureChar = (function () {
-  var canvas = document.createElement("canvas");
+  var canvas  = document.createElement("canvas");
+  var context = canvas.getContext("2d");
 
   return function (f, c) {
-    var context  = canvas.getContext("2d");
     context.font = f;
     return context.measureText(c).width;
   };
