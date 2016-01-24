@@ -27,7 +27,7 @@ var calculateSizeTable = function (font, charSet) {
 // Measurements - done purely outside of DOM with supplied sizetable.
 
 var measureText = function (text, sizeTable) {
-  var collectSizes = function (a, c) { return a + sizeTable[c]; };
+  var collectSizes = function (a, c) { return a + sizeTable[c] || 8; };
   return text.split("").reduce(collectSizes, 0);
 };
 
