@@ -1,7 +1,7 @@
 // Range covers most characters required for standard english text.
 var defaultCharSet = function () {
   var set = [];
-  for (var i = 48; i < 177; i++)
+  for (var i = 32; i < 222; i++)
     set.push(String.fromCharCode(i));
   return set;
 };
@@ -27,7 +27,7 @@ var calculateSizeTable = function (font, charSet) {
 // Measurements - done purely outside of DOM with supplied sizetable.
 
 var measureText = function (text, sizeTable) {
-  var collectSizes = function (a, c) { return a + (sizeTable[c] || 8); };
+  var collectSizes = function (a, c) { return a + (sizeTable[c] || 9); };
   return text.split("").reduce(collectSizes, 0);
 };
 
